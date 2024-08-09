@@ -7,6 +7,12 @@ api_hash = getenv("api_hash")
 bot_token = getenv("bot_token")
 
 
+# bot_token = "6447604073:AAEPLcEuH2PGwuAkNONy0V6oP6cgFmkM3eE"
+# api_hash = "460dbd52a66709679d8d65950720fe22"
+# api_id = "29195129"
+
+
+
 client = TelegramClient('bot_session', api_id, api_hash).start(bot_token=bot_token)
 
 
@@ -15,7 +21,7 @@ async def start_handler(event):
     sender = await event.get_sender()
     first_name = sender.first_name
     reply_btns = [
-                    button.url("Силка На Проєкт", "https://github.com/leonidig/X-PYTHON-MANAGER")
+                    button.url("Силка На Проєкт ", "https://github.com/leonidig/X-PYTHON-MANAGER")
     ]
     await event.reply(f"Привіт, {first_name}!\nЯ бот який допоможе тобі з запуском проекта!", buttons=reply_btns)
     next1_ = [
