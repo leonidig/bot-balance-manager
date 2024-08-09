@@ -131,7 +131,10 @@ async def venv_by_os(event):
         confirm_venv_path = "/Users/leonidlisovskiy/Desktop/bot-balance-manager/confirm_venv.png"
         await client.send_file(event.chat_id, confirm_venv_path, caption="На цьому етапі у тепе програма запитає чи ви хочете обрати свій venv як робочій простір - жми Yes")
         await event.respond("Шаг 2 -  source .venv/bin/activate  (жми enter)")
-        await event.respond("Якщо в тебе поряд з іменем на початку строки написано ( venv, потрібно щоб в нього качати всі бібліотеки, а не напряму тобі на гаджет ) то це означає що ми все правильно зробили", buttons = next10)
+        next10 = [
+            button.inline("Продовжуємо", b'next10')
+        ]
+        await event.respond("Якщо в тебе поряд з іменем на початку строки написано .venv ( venv, потрібно щоб в нього качати всі бібліотеки, а не напряму тобі на гаджет ) то це означає що ми все правильно зробили", buttons = next10)
 
 
 @client.on(events.CallbackQuery(pattern=b'next10'))
